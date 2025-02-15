@@ -51,7 +51,7 @@ jobs:
         cd ${{ github.workspace }}
         pwd
         ls "${{ steps.jar.outputs.jar_file }}"
-        docker build -t my-spring-boot-app -f Dockerfile . --build-arg JAR_FILE="${{ steps.jar.outputs.jar_file }}"
+        docker build -t my-spring-boot-app -f Dockerfile . --build-arg JAR_FILE="${{ steps.jar.outputs.jar_file }}" --progress=plain
         docker tag my-spring-boot-app jfrancis/my-spring-boot-app:latest
         docker history jfrancis/my-spring-boot-app:latest
 
