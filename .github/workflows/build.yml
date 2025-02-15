@@ -46,24 +46,11 @@ jobs:
         ls -l ${{ steps.jar.outputs.jar_file }}
         file ${{ steps.jar.outputs.jar_file }}
 
-    # - name: Build and push Docker images
-    #   uses: docker/build-push-action@v6.13.0
-    #   with:
-    #     # List of build-time variables
-    #     build-args: JAR_FILE="${{ steps.jar.outputs.jar_file }}"
-    #     # Path to the Dockerfile
-    #     file: Dockerfile
-    #     # List of tags
-    #     tags: jfrancis/my-spring-boot-app:latest
-    
-
     - name: Build Docker image
       run: |
         cd ${{ github.workspace }}
-        # docker build -t my-spring-boot-app -f Dockerfile . --build-arg JAR_FILE="${{ steps.jar.outputs.jar_file }}" --progress=plain
         docker build -t my-spring-boot-app -f Dockerfile .
         docker tag my-spring-boot-app jfrancis/my-spring-boot-app:latest
-        docker history jfrancis/my-spring-boot-app:latest
 
     - name: Push Docker image to DockerHub
       run: | 
