@@ -41,10 +41,10 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t my-spring-boot-app -f Dockerfile . --build-arg JAR_FILE=${{ steps.jar.outputs.jar_file }}
-		docker tag  my-spring-boot-app jvlearning/my-spring-boot-app:latest		
-      
+	docker tag my-spring-boot-app jvlearning/my-spring-boot-app:latest
+ 
     - name: Push Docker image to DockerHub
-      run: |
+      run: | 
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
         docker push jvlearning/my-spring-boot-app:latest
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
