@@ -1,0 +1,58 @@
+# Eclipse-specific files
+/.settings/
+/.project
+.classpath
+
+# IntelliJ IDEA files (optional if using IntelliJ too)
+/.idea/
+/*.iml
+*.iws
+
+# Maven target directory
+/target/
+
+# Logs
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.temp
+
+# Maven-specific
+.mvn/
+.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse's working directory for Spring Boot DevTools
+/spring-boot-devtools.properties
+/.spring-boot-devtools/
+
+# Local environment files
+.env
+.env.*
+
+# Node / npm (if using Node assets)
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compiled bytecode files
+*.class
+
+# Package-lock (if applicable)
+package-lock.json
+
+# Binary and jar files
+*.jar
+*.war
+*.ear
+
+# Lombok generated files
+lombok.config
