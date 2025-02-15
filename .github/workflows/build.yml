@@ -43,6 +43,7 @@ jobs:
     - name: Build Docker image
       run: |
         pwd
+        tree .
         ls "./${{ steps.jar.outputs.jar_file }}"
         docker build -t my-spring-boot-app -f Dockerfile . --build-arg JAR_FILE="./${{ steps.jar.outputs.jar_file }}"
         docker tag my-spring-boot-app jvlearning/my-spring-boot-app:latest
