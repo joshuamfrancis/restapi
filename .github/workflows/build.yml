@@ -37,6 +37,8 @@ jobs:
       id: jar
       run: |
         # Assuming the generated jar file is in the target directory
+        pwd
+        ls target/*.jar | head -n 1
         echo "::set-output name=jar_file::$(ls target/*.jar | head -n 1)"
     - name: Build Docker image
       run: |
