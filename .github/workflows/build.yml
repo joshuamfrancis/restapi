@@ -46,6 +46,7 @@ jobs:
         file ${{ steps.jar.outputs.jar_file }}
     - name: Build Docker image
       run: |
+        cd ${{ github.workspace }}
         pwd
         ls "${{ steps.jar.outputs.jar_file }}"
         docker build -t my-spring-boot-app -f Dockerfile . --build-arg JAR_FILE="./${{ steps.jar.outputs.jar_file }}"
