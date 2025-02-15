@@ -2,5 +2,5 @@
 *
 
 # Include only the JAR file and necessary context
-!path/to/your/jar/file/*.jar
+!target/*.jar
 !Dockerfile
